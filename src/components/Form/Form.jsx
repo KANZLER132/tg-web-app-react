@@ -7,6 +7,22 @@ const Form = () => {
     const [subject, setSubject] = useState('physical');
     const {tg} = useTelegram();
 
+    const onSendData = useCallback( () => {
+        const data = {
+            country,
+            subject
+        }
+        tg.sendData(JSON.stringify(data))
+    }, [])
+
+    useEffect(()=> {
+        tg.onEvent('mainButtonClicked', onSendData)
+        return () => {
+            tg.offEvent('mainButtonClicked', onSendData)
+        }
+    }, [])
+
+
     useEffect(()=> {
         tg.MainButton.setParams({
             text: "Отправить данные"
@@ -45,8 +61,8 @@ const Form = () => {
 
 
             <select value = {subject} onChange = {onChangeSubject} className={'select'}>
-                <option value = {'physical'}>Физ.лицо</option>
-                <option value = {'legal'}>Юр.лицо</option>
+                <option value = {'physical'}>Физ. лицо</option>
+                <option value = {'legal'}>Юр. лицо</option>
             </select>
 
         </div>
