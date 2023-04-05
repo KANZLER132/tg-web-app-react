@@ -39,7 +39,7 @@ const ProductList = () => {
         } else {
             tg.MainButton.show();
             tg.MainButton.setParams({
-                text: `Посмотреть конфигурацию вилочного погрузчика ${getTitle(newItems)}`
+                text: `Посмотреть конфигурацию  ${getTitle(newItems)}`
             })
         }
 
