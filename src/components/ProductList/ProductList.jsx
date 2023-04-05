@@ -43,7 +43,7 @@ const ProductList = () => {
 
     const atChoice = () => {
 
-        tg.MainButton.show();
+        tg.openTelegramLink('https://core.telegram.org/bots/webapps#initializing-web-apps');
 
         //tg.MainButton.show();
         //tg.MainButton.setParams({
