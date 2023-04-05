@@ -43,7 +43,7 @@ const ProductList = () => {
 
     const atChoice = (product) => {
         addedItem = product.title;
-        tg.openTelegramLink(WebAppUrl + './form')
+        return tg.openTelegramLink(WebAppUrl + './form');
         //tg.MainButton.show();
         //tg.MainButton.setParams({
         //    text: `Посмотреть конфигурацию ${product.title}`
