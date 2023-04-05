@@ -4,7 +4,7 @@ import "./ProductItem.css";
 const ProductItem = ({product, className, atChoice}) => {
 
     const atChoiceHandler = () => {
-        atChoice(product);
+        atChoice();
     }
     return (
         <div className={'product ' + className}>
