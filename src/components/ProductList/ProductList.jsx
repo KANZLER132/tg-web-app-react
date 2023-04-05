@@ -2,7 +2,7 @@
 import './ProductList.css';
 import ProductItem from "../ProductItem/ProductItem";
 import {useTelegram} from "../../hooks/useTelegram";
-// import {useCallback, useEffect} from "react";
+import  {useEffect} from "react";
 
 
 const products = [
@@ -16,7 +16,7 @@ const products = [
 
 const ProductList = () => {
     const {tg} = useTelegram();
-    let addedItem;
+    //let addedItem;
 
     // const onSendData = useCallback( () => {
     //     const data = {
@@ -41,9 +41,12 @@ const ProductList = () => {
 
 
 
-    const atChoice = (product) => {
-        addedItem = product.title;
-        return tg.openTelegramLink('http://ya.ru');
+    const atChoice = () => {
+        useEffect(() => {
+            return () => {
+                tg.openTelegramLink('https://core.telegram.org/bots/webapps#initializing-web-apps')
+            }
+        }, [])
         //tg.MainButton.show();
         //tg.MainButton.setParams({
         //    text: `Посмотреть конфигурацию ${product.title}`
