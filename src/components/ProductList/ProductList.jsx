@@ -1,7 +1,9 @@
-import React, {useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import './ProductList.css';
 import ProductItem from "../ProductItem/ProductItem";
 import {useTelegram} from "../../hooks/useTelegram";
+import {useCallback, useEffect} from "react";
+const WebAppUrl = "https://polite-boba-b5f6a5.netlify.app/";
 
 const products = [
     {id: '1', title: 'MITSUBI1', description: 'dadada'},
@@ -10,48 +12,45 @@ const products = [
     {id: '4', title: 'MITSUBI4', description: 'gagaga'},
 ]
 
-// const getTitle = (items = []) => {
-//     items.forEach(item => {
-//         return item.title
-//     })
-// }
 
 
 const ProductList = () => {
-    const {tg} = useTelegram();
+    const {tg, queryId} = useTelegram();
+    let addedItem;
 
-    // const [addedItems, setAddedItems] = useState([]);
+    // const onSendData = useCallback( () => {
+    //     const data = {
+    //         product: addedItem,
+    //         queryId,
+    //     }
+    //     fetch('http://localhost:8000', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //         },
+    //         body: JSON.stringify(data)
+    //     })
+    // }, [])
+    //
+    // useEffect(()=> {
+    //     tg.onEvent('mainButtonClicked', onSendData)
+    //     return () => {
+    //         tg.offEvent('mainButtonClicked', onSendData)
+    //     }
+    // }, [onSendData])
+
+
 
     const atChoice = (product) => {
-
-        tg.MainButton.show();
-        tg.MainButton.setParams({
-            text: `Посмотреть конфигурацию ${product.title}`
-        })
-
-
-        // const alreadyAdded = addedItems.find(item => item.id === product.id);
-        // let newItems = [];
-        //
-        // if(alreadyAdded) {
-        //     newItems = addedItems.filter(item => item.id !== product.id);
-        // } else {
-        //     newItems = [...addedItems, product]
-        // }
-        //
-        // setAddedItems(newItems)
-
-        // if(newItems.length === 0) {
-        //     tg.MainButton.hide();
-        // } else {
-        //     tg.MainButton.show();
-        //     tg.MainButton.setParams({
-        //         text: `Посмотреть конфигурацию ${getTitle(newItems)}`
-        //     })
-        // }
-
-
+        addedItem = product.title;
+        tg.openTelegramLink(WebAppUrl + './form')
+        //tg.MainButton.show();
+        //tg.MainButton.setParams({
+        //    text: `Посмотреть конфигурацию ${product.title}`
+        //})
     }
+
+
 
     return (
         <div className = {'list'}>
