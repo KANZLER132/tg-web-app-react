@@ -2,7 +2,7 @@
 import './ProductList.css';
 import ProductItem from "../ProductItem/ProductItem";
 import {useTelegram} from "../../hooks/useTelegram";
-import  {useEffect} from "react";
+
 
 
 const products = [
@@ -42,11 +42,11 @@ const ProductList = () => {
 
 
     const atChoice = () => {
-        useEffect(() => {
-            return () => {
-                tg.openTelegramLink('https://core.telegram.org/bots/webapps#initializing-web-apps')
-            }
-        }, [])
+
+        return () => {
+            tg.openTelegramLink('https://core.telegram.org/bots/webapps#initializing-web-apps')
+        }
+
         //tg.MainButton.show();
         //tg.MainButton.setParams({
         //    text: `Посмотреть конфигурацию ${product.title}`
