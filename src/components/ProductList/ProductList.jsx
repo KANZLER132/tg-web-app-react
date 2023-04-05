@@ -4,10 +4,10 @@ import ProductItem from "../ProductItem/ProductItem";
 import {useTelegram} from "../../hooks/useTelegram";
 
 const products = [
-    {id: '1', title: 'Вилочный погрузчик MITSUBI', description: 'dadada'},
-    {id: '2', title: 'Вилочный погрузчик MITSUBI2', description: 'fafafaf'},
-    {id: '3', title: 'Вилочный погрузчик MITSUBI3', description: 'jajaja'},
-    {id: '4', title: 'Вилочный погрузчик MITSUBI4', description: 'gagaga'},
+    {id: '1', title: 'MITSUBI1', description: 'dadada'},
+    {id: '2', title: 'MITSUBI2', description: 'fafafaf'},
+    {id: '3', title: 'MITSUBI3', description: 'jajaja'},
+    {id: '4', title: 'MITSUBI4', description: 'gagaga'},
 ]
 
 const getTitle = (items = []) => {
