@@ -1,19 +1,17 @@
 import React from 'react';
 import Button from "../Button/Button";
 import "./ProductItem.css";
-import {useTelegram} from "../../hooks/useTelegram";
-const ProductItem = ({product, className}) => {
+const ProductItem = ({product, className, atChoice}) => {
 
-    // const atChoiceHandler = () => {
-    //     atChoice(product);
-    // }
-    const tg = useTelegram();
+    const atChoiceHandler = () => {
+        atChoice(product);
+    }
     return (
         <div className={'product ' + className}>
             <div className = {'img'}/>
             <div className = {'title'}>{product.title}</div>
             <div className = {'description'}>{product.description}</div>
-            <Button className = {'add-btn'} onClick = {tg.openTelegramLink('https://core.telegram.org/bots/webapps#initializing-web-apps')}>
+            <Button className = {'add-btn'} onClick = {atChoiceHandler}>
                 Выбрать конфигурацию
             </Button>
 
