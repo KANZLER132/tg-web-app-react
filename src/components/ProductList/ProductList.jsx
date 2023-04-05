@@ -3,7 +3,7 @@ import './ProductList.css';
 import ProductItem from "../ProductItem/ProductItem";
 import {useTelegram} from "../../hooks/useTelegram";
 // import {useCallback, useEffect} from "react";
-const WebAppUrl = "https://polite-boba-b5f6a5.netlify.app/";
+
 
 const products = [
     {id: '1', title: 'MITSUBI1', description: 'dadada'},
@@ -43,7 +43,7 @@ const ProductList = () => {
 
     const atChoice = (product) => {
         addedItem = product.title;
-        return tg.openTelegramLink(WebAppUrl + './form');
+        return tg.openTelegramLink('http://ya.ru');
         //tg.MainButton.show();
         //tg.MainButton.setParams({
         //    text: `Посмотреть конфигурацию ${product.title}`
