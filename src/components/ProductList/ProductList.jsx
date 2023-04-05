@@ -10,38 +10,45 @@ const products = [
     {id: '4', title: 'MITSUBI4', description: 'gagaga'},
 ]
 
-const getTitle = (items = []) => {
-    items.forEach(item => {
-        return item.title
-    })
-}
+// const getTitle = (items = []) => {
+//     items.forEach(item => {
+//         return item.title
+//     })
+// }
 
 
 const ProductList = () => {
     const {tg} = useTelegram();
 
-    const [addedItems, setAddedItems] = useState([]);
+    // const [addedItems, setAddedItems] = useState([]);
 
     const atChoice = (product) => {
-        const alreadyAdded = addedItems.find(item => item.id === product.id);
-        let newItems = [];
 
-        if(alreadyAdded) {
-            newItems = addedItems.filter(item => item.id !== product.id);
-        } else {
-            newItems = [...addedItems, product]
-        }
+        tg.MainButton.show();
+        tg.MainButton.setParams({
+            text: `Посмотреть конфигурацию ${product.title}`
+        })
 
-        setAddedItems(newItems)
 
-        if(newItems.length === 0) {
-            tg.MainButton.hide();
-        } else {
-            tg.MainButton.show();
-            tg.MainButton.setParams({
-                text: `Посмотреть конфигурацию ${getTitle(newItems)}`
-            })
-        }
+        // const alreadyAdded = addedItems.find(item => item.id === product.id);
+        // let newItems = [];
+        //
+        // if(alreadyAdded) {
+        //     newItems = addedItems.filter(item => item.id !== product.id);
+        // } else {
+        //     newItems = [...addedItems, product]
+        // }
+        //
+        // setAddedItems(newItems)
+
+        // if(newItems.length === 0) {
+        //     tg.MainButton.hide();
+        // } else {
+        //     tg.MainButton.show();
+        //     tg.MainButton.setParams({
+        //         text: `Посмотреть конфигурацию ${getTitle(newItems)}`
+        //     })
+        // }
 
 
     }
