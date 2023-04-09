@@ -46,8 +46,11 @@ const ProductList = () => {
     }, [])
 
     useEffect(() => {
-        tg.offEvent('mainButtonClicked', onClickButton);
-    }, [])
+        tg.onEvent('mainButtonClicked', onClickButton)
+        return () => {
+            tg.offEvent('mainButtonClicked', onClickButton)
+        }
+    }, [onClickButton])
 
     const atChoice = (product) => {
 
