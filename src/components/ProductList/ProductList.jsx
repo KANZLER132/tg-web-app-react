@@ -42,15 +42,10 @@ const ProductList = () => {
     // }, [onSendData])
 
     const onClickButton = useCallback( () => {
-        tg.hide();
+        tg.close();
     }, [])
 
-    useEffect(() => {
-        tg.onEvent('mainButtonClicked', onClickButton)
-        return () => {
-            tg.offEvent('mainButtonClicked', onClickButton)
-        }
-    }, [onClickButton])
+    tg.MainButton.onClick(onClickButton);
 
     const atChoice = (product) => {
 
