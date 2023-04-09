@@ -2,6 +2,7 @@
 import './ProductList.css';
 import ProductItem from "../ProductItem/ProductItem";
 import {useTelegram} from "../../hooks/useTelegram";
+import {useCallback, useEffect} from "react";
 
 
 
@@ -40,6 +41,13 @@ const ProductList = () => {
     //     }
     // }, [onSendData])
 
+    const onClickButton = useCallback( () => {
+        tg.hide();
+    }, [])
+
+    useEffect(() => {
+        tg.offEvent('mainButtonClicked', onClickButton);
+    }, [])
 
     const atChoice = (product) => {
 
@@ -47,7 +55,7 @@ const ProductList = () => {
         tg.MainButton.setParams({
            text: `Посмотреть конфигурацию ${product.title}`
         })
-        tg.MainButton.onClick(tg.hide());
+
 
     }
 
