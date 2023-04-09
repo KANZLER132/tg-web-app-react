@@ -1,9 +1,8 @@
 const tg = window.Telegram.WebApp;
-const weba = 'https://core.telegram.org/bots/webapps#initializing-web-apps';
 export function useTelegram() {
     const onClose = () => {
 
-        tg.openTelegramLink(weba);
+        tg.close();
     }
 
     const onToggleButton = () => {
