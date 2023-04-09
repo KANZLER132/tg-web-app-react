@@ -47,6 +47,7 @@ const ProductList = () => {
         tg.MainButton.setParams({
            text: `Посмотреть конфигурацию ${product.title}`
         })
+        tg.MainButton.onClick(tg.hide());
 
     }
 
