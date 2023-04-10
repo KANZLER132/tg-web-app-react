@@ -17,7 +17,7 @@ const products = [
 const ProductList = () => {
     const {tg} = useTelegram();
 
-    let addedItem;
+    let addedItem = "ffaf";
 
     // const onSendData = useCallback( () => {
     //     const data = {
@@ -69,8 +69,6 @@ const ProductList = () => {
         tg.MainButton.setParams({
            text: `Посмотреть конфигурацию ${product.title}`
         })
-
-
     }
 
 
