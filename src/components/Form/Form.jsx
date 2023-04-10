@@ -22,7 +22,11 @@ const Form = () => {
     //     }
     // }, [onSendData])
 
-    tg.MainButton.onClick(tg.close());
+    const onClickButton = useCallback( () => {
+        tg.close();
+    }, [])
+
+    tg.MainButton.onClick(onClickButton);
 
     useEffect(()=> {
         tg.MainButton.setParams({

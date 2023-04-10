@@ -41,13 +41,12 @@ const ProductList = () => {
     // }, [onSendData])
 
 
-    const onSendData = useCallback(() => {
+    const onSendData = useCallback( () => {
         const data = {
-            addedItem,
+           product: addedItem
         }
         tg.sendData(JSON.stringify(data))
-
-    }, [addedItem])
+    }, [])
 
     useEffect(()=> {
         tg.onEvent('mainButtonClicked', onSendData)
