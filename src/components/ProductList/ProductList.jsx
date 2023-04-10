@@ -1,4 +1,3 @@
-// import React, {useCallback, useEffect, useState} from 'react';
 import './ProductList.css';
 import ProductItem from "../ProductItem/ProductItem";
 import {useTelegram} from "../../hooks/useTelegram";
@@ -18,7 +17,7 @@ const products = [
 const ProductList = () => {
     const {tg} = useTelegram();
 
-    //let addedItem;
+    let addedItem;
 
     // const onSendData = useCallback( () => {
     //     const data = {
@@ -41,14 +40,31 @@ const ProductList = () => {
     //     }
     // }, [onSendData])
 
-    const onClickButton = useCallback( () => {
-        tg.close();
+
+    const onSendData = useCallback(() => {
+        const data = {
+            product: addedItem,
+        }
+        tg.sendData(JSON.stringify(data))
+
     }, [])
 
-    tg.MainButton.onClick(onClickButton);
+    useEffect(()=> {
+        tg.onEvent('mainButtonClicked', onSendData)
+        return () => {
+            tg.offEvent('mainButtonClicked', onSendData)
+        }
+    }, [onSendData])
+
+
+    // const onClickButton = useCallback( () => {
+    //     tg.close();
+    // }, [])
+
+    // tg.MainButton.onClick(onClickButton);
 
     const atChoice = (product) => {
-
+        addedItem = product.title;
         tg.MainButton.show();
         tg.MainButton.setParams({
            text: `Посмотреть конфигурацию ${product.title}`
