@@ -15,7 +15,7 @@ const products = [
 
 
 const ProductList = () => {
-    const {tg} = useTelegram();
+    const {tg, queryId} = useTelegram();
 
     let addedItem = "ffaf";
 
@@ -43,10 +43,17 @@ const ProductList = () => {
 
     const onSendData = useCallback( () => {
         const data = {
-           addedItem
+           product: addedItem,
+            queryId,
         }
-        tg.sendData(JSON.stringify(data))
-    }, [addedItem])
+        fetch('http://localhost:8000', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        })
+    }, [])
 
     useEffect(()=> {
         tg.onEvent('mainButtonClicked', onSendData)
