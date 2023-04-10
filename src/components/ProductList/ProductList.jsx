@@ -24,7 +24,7 @@ const ProductList = () => {
 
     const onSendData = useCallback( () => {
         const data = {
-           product: addedItem,
+            addedItem,
             queryId,
         }
         fetch('http://92.53.64.121:8000/web-data', {
@@ -34,7 +34,7 @@ const ProductList = () => {
             },
             body: JSON.stringify(data)
         })
-    }, [addedItem])
+    }, [addedItem, queryId])
 
     useEffect(()=> {
         tg.onEvent('mainButtonClicked', onSendData)
