@@ -17,7 +17,7 @@ const products = [
 const ProductList = () => {
     const {tg, queryId} = useTelegram();
 
-    let addedItem = "ffaf";
+    let addedItem = "hello";
 
     // const onSendData = useCallback( () => {
     //     const data = {
