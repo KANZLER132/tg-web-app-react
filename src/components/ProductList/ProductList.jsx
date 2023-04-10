@@ -19,26 +19,7 @@ const ProductList = () => {
 
     let addedItem = "hello";
 
-    // const onSendData = useCallback( () => {
-    //     const data = {
-    //         product: addedItem,
-    //         queryId,
-    //     }
-    //     fetch('http://localhost:8000', {
-    //         method: 'POST',
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //         },
-    //         body: JSON.stringify(data)
-    //     })
-    // }, [])
-    //
-    // useEffect(()=> {
-    //     tg.onEvent('mainButtonClicked', onSendData)
-    //     return () => {
-    //         tg.offEvent('mainButtonClicked', onSendData)
-    //     }
-    // }, [onSendData])
+
 
 
     const onSendData = useCallback( () => {
@@ -53,7 +34,7 @@ const ProductList = () => {
             },
             body: JSON.stringify(data)
         })
-    }, [])
+    }, [addedItem])
 
     useEffect(()=> {
         tg.onEvent('mainButtonClicked', onSendData)
@@ -63,11 +44,6 @@ const ProductList = () => {
     }, [onSendData])
 
 
-    // const onClickButton = useCallback( () => {
-    //     tg.close();
-    // }, [])
-
-    // tg.MainButton.onClick(onClickButton);
 
     const atChoice = (product) => {
         addedItem = product.title;
