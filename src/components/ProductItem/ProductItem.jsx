@@ -11,6 +11,7 @@ const ProductItem = ({product, className, atChoice}) => {
 
     return (
         <div className={'product ' + className}>
+            <div className={'img'}></div>
             <div className = {'title'}>{product.title}</div>
             <div className = {'description'}>{product.description}</div>
             <Button className = {'add-btn'} onClick = {atChoiceHandler}>
