@@ -8,10 +8,11 @@
 
 .img {
     width: 100%;
-    background: lightgray;
     height: 100px;
     margin: 0 auto 6px;
-    background: var(--tg-theme-button-color);
+    object-fit: cover;
+    object-position: center center;
+
 }
 
 .description {
