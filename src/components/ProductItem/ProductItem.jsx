@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from "../Button/Button";
 import "./ProductItem.css";
-// import {Image} from 'react-native';
+import {Image} from 'react-native';
 
 const ProductItem = ({product, className, atChoice}) => {
 
@@ -9,17 +9,16 @@ const ProductItem = ({product, className, atChoice}) => {
         atChoice(product);
     }
 
-    // const styles = StyleSheet.create({
-    //     img: {
-    //         height: 100,
-    //         width: 100,
-    //
-    //     }
-    // })
-
 
     return (
         <div className={'product ' + className}>
+            <div>
+                <Image
+                    source={{
+                        uri: 'https://reactnative.dev/img/tiny_logo.png',
+                    }}
+                />
+            </div>
             <div className = {'title'}>{product.title}</div>
             <div className = {'description'}>{product.description}</div>
             <Button className = {'add-btn'} onClick = {atChoiceHandler}>
