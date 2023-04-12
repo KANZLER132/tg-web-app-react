@@ -19,21 +19,19 @@ const ProductList = () => {
 
     let addedItem = "hello";
 
-
-
-
     const onSendData = useCallback( () => {
         const data = {
             addedItem,
             queryId,
         }
-        fetch('http://92.53.64.121:8000/web-data', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data)
-        })
+        // fetch('http://92.53.64.121:8000/web-data', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //     },
+        //     body: JSON.stringify(data)
+        // })
+        tg.sendData(JSON.stringify(data))
     }, [addedItem, queryId])
 
     useEffect(()=> {
