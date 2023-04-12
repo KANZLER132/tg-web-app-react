@@ -8,7 +8,7 @@ const ProductItem = ({product, className, atChoice}) => {
     }
     return (
         <div className={'product ' + className}>
-            <img src = {product.img} alt = "" className = {'img'}/>
+            <img src = {require('images/1.jpg')} alt = ""/>
             <div className = {'title'}>{product.title}</div>
             <div className = {'description'}>{product.description}</div>
             <Button className = {'add-btn'} onClick = {atChoiceHandler}>
