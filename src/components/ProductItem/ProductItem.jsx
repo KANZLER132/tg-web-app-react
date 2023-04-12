@@ -1,6 +1,8 @@
 import React from 'react';
 import Button from "../Button/Button";
 import "./ProductItem.css";
+import "./image.jsx";
+
 const ProductItem = ({product, className, atChoice}) => {
 
     const atChoiceHandler = () => {
@@ -11,7 +13,13 @@ const ProductItem = ({product, className, atChoice}) => {
 
     return (
         <div className={'product ' + className}>
-            <div className={'img'}></div>
+            <div>
+                <Image
+                    src = {"images/2.jpg"}
+                    alt = {"Loading"}
+                    className = {"img"}
+                />
+            </div>
             <div className = {'title'}>{product.title}</div>
             <div className = {'description'}>{product.description}</div>
             <Button className = {'add-btn'} onClick = {atChoiceHandler}>
