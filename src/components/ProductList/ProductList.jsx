@@ -6,7 +6,7 @@ import {useCallback, useEffect} from "react";
 
 
 const products = [
-    {id: '1', title: 'MITSUBI FG20T, 2022', description: '2 020 000 с НДС', img: "images/3.jpg"},
+    {id: '1', title: 'MITSUBI FG20T, 2022', description: '2 020 000 с НДС', img: "images/2.jpg"},
     {id: '2', title: 'MITSUBI FG25T, 2022', description: '2 120 000 с НДС', img: "images/1.jpg"},
     {id: '3', title: 'MITSUBI FG30T, 2022', description: '2 520 000 с НДС', img: "images/2.jpg"},
     {id: '4', title: 'MITSUBI FG15T, 2022', description: '1 020 000 с НДС', img: "images/3.jpg"},
