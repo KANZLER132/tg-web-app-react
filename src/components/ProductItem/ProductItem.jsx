@@ -1,7 +1,6 @@
 import React from 'react';
 import Button from "../Button/Button";
 import "./ProductItem.css";
-import photo1 from '../images/1.jpg';
 const ProductItem = ({product, className, atChoice}) => {
 
     const atChoiceHandler = () => {
