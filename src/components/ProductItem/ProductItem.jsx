@@ -1,7 +1,6 @@
 import React from 'react';
 import Button from "../Button/Button";
 import "./ProductItem.css";
-import {Image} from 'react-native';
 
 const ProductItem = ({product, className, atChoice}) => {
 
