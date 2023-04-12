@@ -8,13 +8,7 @@ const ProductItem = ({product, className, atChoice}) => {
         atChoice(product);
     }
 
-    function Home() {
-        return (
-            <div>
-                <img src={photo1} alt=""/>
-            </div>
-        );
-    }
+
 
     return (
         <div className={'product ' + className}>
