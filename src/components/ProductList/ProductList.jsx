@@ -3,16 +3,15 @@ import ProductItem from "../ProductItem/ProductItem";
 import {useTelegram} from "../../hooks/useTelegram";
 import {useCallback, useEffect} from "react";
 import photo from './1.jpg';
-import photo1 from './2.jpg';
 import photo2 from './3.jpg';
-import photo3 from './4.jpg';
+import photo1 from './4.jpg'
 
 
 const products = [
     {id: '1', title: 'MITSUBI FG20T, 2022', description: '2 020 000 с НДС', img: photo},
-    {id: '2', title: 'MITSUBI FG25T, 2022', description: '2 120 000 с НДС', img: photo2},
-    {id: '3', title: 'MITSUBI FG30T, 2022', description: '2 520 000 с НДС', img: photo3},
-    {id: '4', title: 'MITSUBI FG15T, 2022', description: '1 020 000 с НДС', img: photo1},
+    {id: '2', title: 'MITSUBI FG25T, 2022', description: '2 120 000 с НДС', img: photo1},
+    {id: '3', title: 'MITSUBI FG30T, 2022', description: '2 520 000 с НДС', img: photo2},
+    {id: '4', title: 'MITSUBI FG15T, 2022', description: '1 020 000 с НДС', img: photo},
 ]
 
 
@@ -27,13 +26,7 @@ const ProductList = () => {
             addedItem,
             queryId,
         }
-        // fetch('http://92.53.64.121:8000/web-data', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //     },
-        //     body: JSON.stringify(data)
-        // })
+
         tg.sendData(JSON.stringify(data))
     }, [addedItem, queryId])
 
@@ -49,8 +42,9 @@ const ProductList = () => {
     const atChoice = (product) => {
         addedItem = product.title;
         tg.MainButton.show();
+        tg.MainButton.color = "#f8a818";
         tg.MainButton.setParams({
-           text: `Посмотреть конфигурацию ${product.title}`
+           text: `Выбрать конфигурацию ${product.title}`
         })
     }
 

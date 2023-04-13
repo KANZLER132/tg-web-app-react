@@ -22,7 +22,7 @@ const ProductItem = ({product, className, atChoice}) => {
             <div className = {'title'}>{product.title}</div>
             <div className = {'description'}>{product.description}</div>
             <Button className = {'add-btn'} onClick = {atChoiceHandler}>
-                Выбрать конфигурацию
+                Конфигуратор
             </Button>
 
         </div>

@@ -7,4 +7,6 @@
 body {
   background: var(--tg-theme-bg-color);
   color: var(--tg-theme-text-color);
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 15px;
 }
