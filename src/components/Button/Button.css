@@ -6,5 +6,10 @@
     border-radius: 10px;
     color: #fff;
     font-weight: 700;
+    cursor: pointer;
+    transition: background .2s linear;
 }
 
+.button:hover {
+    background: rgb(255, 205, 106);
+}
