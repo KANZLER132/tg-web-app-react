@@ -9,7 +9,9 @@ const Header = () => {
         <div className={'header'}>
             <Button onClick = {onClose}>Закрыть</Button>
             <span className={'nav'}>
-                Погрузчики / Услуги
+                <a className={'underline-link'} href = "#">Вилочные погрузчики </a>
+                <a className={'SepLink'} href = "#">/</a>
+                <a className={'underline-link'} href = "#"> Услуги</a>
             </span>
             
         </div>

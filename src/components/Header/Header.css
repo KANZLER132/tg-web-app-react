@@ -9,3 +9,39 @@
 .nav {
     margin-left: auto;
 }
+
+.underline-link {
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+
+}
+
+.underline-link:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 1px;
+    width: 0;
+    background-color: #3975e1fc;
+    transition: width .4s;
+}
+
+.underline-link:hover:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 1px;
+    width: 100%;
+    background-color: #3975e1fc;
+    transition: width .4s;
+}
+
+.SepLink {
+    cursor: pointer;
+    text-decoration: none;
+}
