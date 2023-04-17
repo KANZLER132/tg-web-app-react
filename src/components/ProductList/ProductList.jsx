@@ -24,10 +24,9 @@ const products = [
 const ProductList = () => {
     const {tg} = useTelegram();
 
-    let str
+    let str = '1';
 
     const atChoice = (product) => {
-        str = product.id;
         tg.MainButton.show();
         tg.MainButton.color = "#f8a818";
         tg.MainButton.setParams({
@@ -37,7 +36,7 @@ const ProductList = () => {
 
     const onSendData = useCallback( () => {
         const data = {
-            str,
+            str1: str,
         }
 
         tg.sendData(JSON.stringify(data))
@@ -49,8 +48,6 @@ const ProductList = () => {
             tg.offEvent('mainButtonClicked', onSendData)
         }
     }, [onSendData])
-
-
 
 
 
