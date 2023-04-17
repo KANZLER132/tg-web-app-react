@@ -23,14 +23,20 @@ const products = [
 
 const ProductList = () => {
     const {tg} = useTelegram();
-    const str = "fafaf";
-    const onSendData = useCallback( () => {
+
+    const getId = (product) => {
+        const st = product.id;
+        return st;
+    }
+
+
+    const onSendData = useCallback( (product) => {
         const data = {
-            str,
+            str: getId(product),
         }
 
         tg.sendData(JSON.stringify(data))
-    }, [str])
+    }, [])
 
     useEffect(()=> {
         tg.onEvent('mainButtonClicked', onSendData)
