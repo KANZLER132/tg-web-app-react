@@ -24,9 +24,10 @@ const products = [
 const ProductList = () => {
     const {tg} = useTelegram();
 
-    let str = '1';
+    let str;
 
     const atChoice = (product) => {
+        str = product.id;
         tg.MainButton.show();
         tg.MainButton.color = "#f8a818";
         tg.MainButton.setParams({
