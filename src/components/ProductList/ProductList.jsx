@@ -22,18 +22,17 @@ const products = [
 
 
 const ProductList = () => {
-    const {tg, queryId} = useTelegram();
+    const {tg} = useTelegram();
 
-    let addedItem = "hello";
 
-    const onSendData = useCallback( () => {
+    const onSendData = useCallback( (product) => {
+        const Id = product.id;
         const data = {
-            addedItem,
-            queryId,
+            Id,
         }
 
         tg.sendData(JSON.stringify(data))
-    }, [addedItem, queryId])
+    }, [])
 
     useEffect(()=> {
         tg.onEvent('mainButtonClicked', onSendData)
@@ -45,14 +44,12 @@ const ProductList = () => {
 
 
     const atChoice = (product) => {
-        addedItem = product.title;
         tg.MainButton.show();
         tg.MainButton.color = "#f8a818";
         tg.MainButton.setParams({
            text: `Выбрать конфигурацию ${product.title}`
         })
     }
-
 
 
     return (
