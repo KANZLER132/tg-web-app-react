@@ -24,10 +24,15 @@ const products = [
 const ProductList = () => {
     const {tg} = useTelegram();
 
+    let str
 
-    let str;
-    const getId = (product) => {
+    const atChoice = (product) => {
         str = product.id;
+        tg.MainButton.show();
+        tg.MainButton.color = "#f8a818";
+        tg.MainButton.setParams({
+            text: `Выбрать конфигурацию ${product.title}`
+        })
     }
 
     const onSendData = useCallback( () => {
@@ -47,13 +52,7 @@ const ProductList = () => {
 
 
 
-    const atChoice = (product) => {
-        tg.MainButton.show();
-        tg.MainButton.color = "#f8a818";
-        tg.MainButton.setParams({
-           text: `Выбрать конфигурацию ${product.title}`
-        })
-    }
+
 
 
     return (
