@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from "../Button/Button";
 import "./ProductItem.css";
+import {LazyLoadImage} from "react-lazy-load-image-component/src";
 
 
 
@@ -17,7 +18,7 @@ const ProductItem = ({product, className, atChoice}) => {
 
     return (
         <div className={'product ' + className}>
-            <img className={'scale'} src={product.img}  alt="..." loading={"lazy"}/>
+            <LazyLoadImage className={'scale'} src={product.img}  alt="..."/>
             <div className = {'title'}>{product.title}</div>
             <div className = {'description'}>{product.description}</div>
             <Button className = {'add-btn'} onClick = {atChoiceHandler}>

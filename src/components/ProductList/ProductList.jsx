@@ -2,6 +2,7 @@ import './ProductList.css';
 import ProductItem from "../ProductItem/ProductItem";
 import {useTelegram} from "../../hooks/useTelegram";
 import {useCallback, useEffect} from "react";
+
 import photo from './1.jpg';
 import photo1 from './2.jpg';
 import photo2 from './3.jpg';
