@@ -1,7 +1,7 @@
 import './ProductList1.css';
 import {useTelegram} from "../../hooks/useTelegram";
 // import {useCallback, useEffect} from "react";
-import ProductItem1 from "../ProductItem/ProductItem";
+import ProductItem1 from "../ProductItem1/ProductItem1";
 import photo from './intercara1.png';
 
 
