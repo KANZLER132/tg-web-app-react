@@ -1,7 +1,7 @@
 import './ProductList1.css';
 import {useTelegram} from "../../hooks/useTelegram";
 // import {useCallback, useEffect} from "react";
-import ProductItem from "../ProductItem/ProductItem";
+import ProductItem1 from "../ProductItem/ProductItem";
 import photo from './intercara1.png';
 
 
@@ -56,7 +56,7 @@ const products = [
      return (
          <div className = {'list'}>
              {products.map(item => (
-                 <ProductItem
+                 <ProductItem1
                      product = {item}
                      atChoice = {atChoice}
                      className = {'item'}
