@@ -18,48 +18,56 @@ const products = [
 
 
 
+// const ProductList1 = () => {
+//     const {tg} = useTelegram();
+//
+//     let str;
+//
+//     const atChoice = (product) => {
+//         str = product.id;
+//         tg.MainButton.show();
+//         tg.MainButton.color = "#f8a818";
+//         tg.MainButton.setParams({
+//             text: `Выбрать конфигурацию ${product.title}`
+//         })
+//     }
+//
+//     const onSendData = useCallback( () => {
+//         const data = {
+//             str1: str,
+//         }
+//
+//         tg.sendData(JSON.stringify(data))
+//     }, [str])
+//
+//     useEffect(()=> {
+//         tg.onEvent('mainButtonClicked', onSendData)
+//         return () => {
+//             tg.offEvent('mainButtonClicked', onSendData)
+//         }
+//     }, [onSendData])
+//
+//
+//
+//     return (
+//         <div className = {'list'}>
+//             {products.map(item => (
+//                 <ProductItem
+//                     product = {item}
+//                     atChoice = {atChoice}
+//                     className = {'item'}
+//                 />
+//             ))}
+//         </div>
+//     );
+// };
 const ProductList1 = () => {
-    const {tg} = useTelegram();
-
-    let str;
-
-    const atChoice = (product) => {
-        str = product.id;
-        tg.MainButton.show();
-        tg.MainButton.color = "#f8a818";
-        tg.MainButton.setParams({
-            text: `Выбрать конфигурацию ${product.title}`
-        })
-    }
-
-    const onSendData = useCallback( () => {
-        const data = {
-            str1: str,
-        }
-
-        tg.sendData(JSON.stringify(data))
-    }, [str])
-
-    useEffect(()=> {
-        tg.onEvent('mainButtonClicked', onSendData)
-        return () => {
-            tg.offEvent('mainButtonClicked', onSendData)
-        }
-    }, [onSendData])
-
-
-
     return (
-        <div className = {'list'}>
-            {products.map(item => (
-                <ProductItem
-                    product = {item}
-                    atChoice = {atChoice}
-                    className = {'item'}
-                />
-            ))}
+        <div>
+            hello world
         </div>
-    );
-};
+    )
+
+}
 
 export default ProductList1;
