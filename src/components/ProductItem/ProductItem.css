@@ -4,14 +4,13 @@
     border: 1px solid rgb(248, 168, 24);
     padding: 15px;
     width: 170px;
+
 }
 
-.img {
+.scale {
     width: 100%;
-    height: auto;
     margin: 0 auto 6px;
-    /*object-fit: cover;*/
-    /*object-position: center center;*/
+
 }
 
 .description {
