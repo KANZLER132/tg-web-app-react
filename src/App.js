@@ -18,13 +18,13 @@ function App() {
     useEffect(() => {
         const timer = setInterval(() => {
             setShow(!show)
-        }, 0)
+        }, 700)
     }, [])
 
     return (
         <section>
 
-            <CSSTransition in = {show} classNames = 'alert' timeout = {300} unmountOnExit>
+            <CSSTransition in = {show} classNames = 'alert' timeout = {1} unmountOnExit>
                 <div className="App">
                     <Header />
                     <Routes>
