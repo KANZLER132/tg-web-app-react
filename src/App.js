@@ -24,7 +24,7 @@ function App() {
     return (
         <section>
 
-            <CSSTransition in = {show} classNames = 'alert' timeout = {300} unmountOnExit>
+            <CSSTransition in = {show} classNames = 'alert' timeout = {1} unmountOnExit>
                 <div className="App">
                     <Header />
                     <Routes>
@@ -40,10 +40,3 @@ function App() {
 
 export default App;
 
-// <div className="App">
-//     <Header />
-//     <Routes>
-//         <Route index element = {<ProductList />}/>
-//         <Route path = {'service'} element={<ProductList1 />}/>
-//     </Routes>
-// </div>
