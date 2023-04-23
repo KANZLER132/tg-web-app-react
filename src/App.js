@@ -18,7 +18,7 @@ function App() {
     useEffect(() => {
         const timer = setInterval(() => {
             setShow(!show)
-        }, 1000)
+        }, 0)
     }, [])
 
     return (
