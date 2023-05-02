@@ -5,7 +5,9 @@ import Header from "./components/Header/Header";
 import {Route, Routes} from "react-router-dom"
 import ProductList from "./components/ProductList/ProductList";
 import ProductList1 from "./components/ProductList1/ProductList1";
+
 import {CSSTransition} from "react-transition-group";
+
 
 function App() {
     const {tg} = useTelegram();
@@ -23,16 +25,19 @@ function App() {
 
     return (
         <section>
-
             <CSSTransition in = {show} classNames = 'alert' timeout = {300} unmountOnExit>
                 <div className="App">
+
                     <Header />
                     <Routes>
                     <Route index element = {<ProductList />}/>
                     <Route path = {'service'} element={<ProductList1 />}/>
                     </Routes>
+
                 </div>
+
             </CSSTransition>
+
         </section>
 
     )
@@ -40,10 +45,3 @@ function App() {
 
 export default App;
 
-// <div className="App">
-//     <Header />
-//     <Routes>
-//         <Route index element = {<ProductList />}/>
-//         <Route path = {'service'} element={<ProductList1 />}/>
-//     </Routes>
-// </div>
