@@ -24,18 +24,17 @@
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-    border-radius: 4px;
     background-color: #fffefe;
     width: 90vw;
     height: 90vh;
     transform: scale(0.5);
     transition: 0.4s all;
-    overflow: hidden;
+    overflow-y: auto;
+
 }
 
 .modal__content.active {
     transform: scale(1);
-    border-radius: 5px;
 }
 
 .div {
